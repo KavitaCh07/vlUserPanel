@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import clock from '../../assets/clock.png';
 import supportFiles from '../../assets/supportFiles.png';
 import moduleTest from '../../assets/moduleTest.png';
+import test from '../../assets/test.png';
 import lifeAccess from '../../assets/lifeAccess.png';
 import globe from '../../assets/globe.png';
 import certificate from '../../assets/certificate.png';
@@ -44,24 +45,24 @@ const Overview = () => {
   const token = JSON.parse(localStorage.getItem("user"));
   const tokenID = token.token;
   const dispatch = useDispatch();
-  
+
   var videoLink = "";
   var chapterComplete = "false";
   var lessonComplete = "false";
   var dispatchResult = "false";
-  var secondsResult= 0;
+  var secondsResult = 0;
   const id = JSON.parse(localStorage.getItem("courseId" || "[]"));
   console.log("local", id);
   const sec = JSON.parse(localStorage.getItem("secondsPlayed" || "[]"));
   console.log("sec", sec);
 
-  videoLink = useSelector((state)=>state.Course.video);
+  videoLink = useSelector((state) => state.Course.video);
   console.log("overview video link", videoLink);
 
-  const lessonId = useSelector((state)=>state.Course.lessonId);
+  const lessonId = useSelector((state) => state.Course.lessonId);
   console.log("overview lesson id", lessonId);
 
-  const modalDetails = useSelector((state)=> state.Course.pausedModalDetails);
+  const modalDetails = useSelector((state) => state.Course.pausedModalDetails);
   secondsResult = modalDetails?.durationCompleted;
   console.log("overview modal details", modalDetails);
   console.log("seondsResult", secondsResult);
@@ -127,7 +128,7 @@ const Overview = () => {
       });
   };
 
- 
+
 
   useEffect(() => {
     axios.get(`https://app-virtuallearning-230221110922.azurewebsites.net/user/view/chapter`,
@@ -140,12 +141,12 @@ const Overview = () => {
         },
       }).then((res) => {
         setChapters(res?.data);
-        
+
       }).catch((err) => {
         console.log(err);
       });
-    });
-    videoLink = chapters?.overviewVideo;
+  });
+  videoLink = chapters?.overviewVideo;
 
   console.log("chapter", chapters);
 
@@ -222,7 +223,7 @@ const Overview = () => {
                             console.log(played)
                             durations();
 
-                        }}
+                          }}
                         />)}
                       {pausedModal && (
                         <div className="modal">
@@ -230,18 +231,18 @@ const Overview = () => {
                             <div className="paused-modal-content">
                               <div className="paused-modal-inner-content">
                                 <div className="paused-time">Your lesson paused at {parseFloat(secondsResult)} <br /> Do you want to continue watching?</div>
-                                <button className='continueWatching-btn' onClick={() => { 
+                                <button className='continueWatching-btn' onClick={() => {
                                   playerRef.current.seekTo(secondsResult, 'seconds');
                                   setControls(true);
                                   setPlaying(true);
                                   setPausedModal(false);
-                                    }}><span className='continueWatching-text'>Continue watching</span></button>
+                                }}><span className='continueWatching-text'>Continue watching</span></button>
                                 <button className='watchBegining-btn' onClick={() => {
                                   playerRef.current.seekTo(0, 'seconds');
                                   setControls(true);
                                   setPlaying(true);
                                   setPausedModal(false);
-                                 }}><span className='watchBegining-text'>Watch from beginning</span></button>
+                                }}><span className='watchBegining-text'>Watch from beginning</span></button>
                               </div>
                             </div>
                           </div>
@@ -365,106 +366,72 @@ const Overview = () => {
                             <>
                               <div className="accordian-content">
                                 {chapters?.lessonResponseList[i]?.lessonList?.map((data, j) => {
-                                  const lessonLength = chapters?.lessonResponseList[i]?.lessonList?.length;
-                                  console.log("lengthof lesson, j", lessonLength, ",", j);
-                                  if (j === lessonLength - 1) {
-                                    return (
-                                      <div className="progress-bar">
-                                        <div className="grey-dot">
-                                          {data?.lessonCompleted === true ? (<img src={greenTick} alt="" />) : (data?.lessonCompleted === false && data?.durationCompleted > 0 ? (<img src={greenDot} alt="" />) : (<img src={greyDot} alt="" />))}
-                                        </div>
-                                        {/* <div className="progress"></div> */}
-                                        <div className='lcp' onClick={()=>{
-                                          (((j === 0 && chapters?.joinedCourse === true) ? ((chapters?.lessonResponseList[i]?.chapterNumber !== 1 && (
-                                            ((chapters?.lessonResponseList[i - 1]?.chapterCompleted === true)) ? chapterComplete = "true" : chapterComplete = "false")))
-                                            : (chapters?.lessonResponseList[i]?.lessonList[j - 1]?.lessonCompleted === true ? lessonComplete = "true" : lessonComplete = "false")));
-  
-                                            (((j === 0 && chapters?.lessonResponseList[i]?.chapterNumber === 1) || data?.lessonCompleted === true || chapterComplete === "true" || lessonComplete === "true") ?
-                                                dispatchResult = "true" : dispatchResult = "false");
-  
-                                                if(dispatchResult === "true" && chapters.joinedCourse === true)
-                                                {
-                                                  console.log("dispatch");
-                                                  dispatch(AddVideo(data?.videoLink));
-                                                  dispatch(AddLessonId(data?.lessonId));
-                                                  dispatch(AddPausedModalDetails(chapters?.lessonResponseList[i]?.lessonList[j]));
-                                                }
-                                                else{
-                                                  console.log("do not dispatch");
-                                                }
 
-                                                if(data?.durationCompleted === 0){
-                                                  setPausedModal(false);
-                                                  setPlaying(true);
-                                                  setControls(true);
-                                                }
-                                                else {
-                                                  setPausedModal(true);
-                                                  setPlaying(false);
-                                                  setControls(false);
-                                                }
-                                        }}>
-                                          <div className="lesson-number">{data?.lessonNumber}</div>
-                                          <div className="lessonName-duration">
-                                            <div className={data?.lessonCompleted === true ? "lesson-number-name-completed" : "lesson-number-name"}>{data?.lessonName}</div>
-                                            <div className="videoDuration">{secondsToHms(data?.duration)}</div>
-                                          </div>
-                                          <div className="lesson-play">
-                                            {data?.lessonCompleted === true && data?.durationCompleted > 0 ? (<img src={redPlay} alt="" />) : (<img src={greyPlay} alt="" />)}
-                                          </div>
-                                        </div>
+                                  return (
+
+                                    <div className="progress-bar">
+                                      <div className="grey-dot">
+                                        {data?.lessonCompleted === true ? (<img src={greenTick} alt="" />) : (data?.lessonCompleted === false && data?.durationCompleted > 0 ? (<img src={greenDot} alt="" />) : (<img src={greyDot} alt="" />))}
                                       </div>
-                                    )
-                                  } else {
-                                    return (
-
-                                      <div className="progress-bar">
-                                        <div className="grey-dot">
-                                          {data?.lessonCompleted === true ? (<img src={greenTick} alt="" />) : (data?.lessonCompleted === false && data?.durationCompleted > 0 ? (<img src={greenDot} alt="" />) : (<img src={greyDot} alt="" />))}
-                                        </div>
-                                        <div className={data?.lessonCompleted === true ? "progress-completed" : "progress"}></div>
-                                        <div className='lcp'onClick={() => {
-                                         (((j === 0 && chapters?.joinedCourse === true) ? ((chapters?.lessonResponseList[i]?.chapterNumber !== 1 && (
+                                      <div className={data?.lessonCompleted === true ? "progress-completed" : "progress"}></div>
+                                      <div className='lcp' onClick={() => {
+                                        (((j === 0 && chapters?.joinedCourse === true) ? ((chapters?.lessonResponseList[i]?.chapterNumber !== 1 && (
                                           ((chapters?.lessonResponseList[i - 1]?.chapterCompleted === true)) ? chapterComplete = "true" : chapterComplete = "false")))
                                           : (chapters?.lessonResponseList[i]?.lessonList[j - 1]?.lessonCompleted === true ? lessonComplete = "true" : lessonComplete = "false")));
 
-                                          (((j === 0 && chapters?.lessonResponseList[i]?.chapterNumber === 1) || data?.lessonCompleted === true || chapterComplete === "true" || lessonComplete === "true") ?
-                                              dispatchResult = "true" : dispatchResult = "false");
+                                        (((j === 0 && chapters?.lessonResponseList[i]?.chapterNumber === 1) || data?.lessonCompleted === true || chapterComplete === "true" || lessonComplete === "true") ?
+                                          dispatchResult = "true" : dispatchResult = "false");
 
-                                              if(dispatchResult === "true" && chapters.joinedCourse === true)
-                                              {
-                                                console.log("dispatch");
-                                                dispatch(AddVideo(data?.videoLink));
-                                                dispatch(AddLessonId(data?.lessonId));
-                                                dispatch(AddPausedModalDetails(chapters?.lessonResponseList[i]?.lessonList[j]));
-                                              }
-                                              else{
-                                                console.log("do not dispatch");
-                                              }
-                                              if(data?.durationCompleted === 0){
-                                                setPausedModal(false);
-                                                setPlaying(true);
-                                                setControls(true);
-                                              }
-                                              else {
-                                                setPausedModal(true);
-                                                setPlaying(false);
-                                                setControls(false);
-                                              }
-                                        }}>
-                                          <div className="lesson-number">{data?.lessonNumber}</div>
-                                          <div className="lessonName-duration">
-                                            <div className={data?.lessonCompleted === true ? "lesson-number-name-completed" : "lesson-number-name"}>{data?.lessonName}</div>
-                                            <div className="videoDuration">{secondsToHms(data?.duration)}</div>
-                                          </div>
-                                          <div className="lesson-play">
-                                            {data?.lessonCompleted === true && data?.durationCompleted > 0 ? (<img src={redPlay} alt="" />) : (<img src={greyPlay} alt="" />)}
-                                          </div>
+                                        if (dispatchResult === "true" && chapters.joinedCourse === true) {
+                                          console.log("dispatch");
+                                          dispatch(AddVideo(data?.videoLink));
+                                          dispatch(AddLessonId(data?.lessonId));
+                                          dispatch(AddPausedModalDetails(chapters?.lessonResponseList[i]?.lessonList[j]));
+                                        }
+                                        else {
+                                          console.log("do not dispatch");
+                                        }
+                                        if (data?.durationCompleted === 0) {
+                                          setPausedModal(false);
+                                          setPlaying(true);
+                                          setControls(true);
+                                        }
+                                        else {
+                                          setPausedModal(true);
+                                          setPlaying(false);
+                                          setControls(false);
+                                        }
+                                      }}>
+                                        <div className="lesson-number">{data?.lessonNumber}</div>
+                                        <div className="lessonName-duration">
+                                          <div className={data?.lessonCompleted === true ? "lesson-number-name-completed" : "lesson-number-name"}>{data?.lessonName}</div>
+                                          <div className="videoDuration">{secondsToHms(data?.duration)}</div>
+                                        </div>
+                                        <div className="lesson-play">
+                                          {data?.lessonCompleted === true && data?.durationCompleted > 0 ? (<img src={redPlay} alt="" />) : (<img src={greyPlay} alt="" />)}
                                         </div>
                                       </div>
-                                    )
-                                  }
+                                    </div>
+                                  )
+
                                 })}
+
+                           {data?.assignmentResponse !== null &&
+                            (
+                              <div className="progress-bar">
+                                <div className="grey-dot">
+                                {data?.assignmentResponse?.assignmentCompleted === true ? (<img src={greenTick} alt="" />) : (<img src={greyDot} alt="" />)}
+                                  </div>
+                                {/* <div className="progress"></div> */}
+                                <div className='lcp'>
+                                  <div className="lesson-number"><img src={test} alt=""/></div>
+                                  <div className="lessonName-duration">
+                                    <div className="lesson-number-name">{data?.assignmentResponse?.assignmentName}</div>
+                                    <div className="videoDuration">{data?.assignmentResponse?.questionCount} mins | {data?.assignmentResponse?.testDuration} Questions</div>
+                                  </div>
+                                </div>
+                              </div>
+                            )}     
 
                               </div>
                             </>
@@ -489,4 +456,3 @@ const Overview = () => {
 }
 
 export default Overview;
-;
