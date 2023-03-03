@@ -50,10 +50,11 @@ const Overview = () => {
   var chapterComplete = "false";
   var lessonComplete = "false";
   var dispatchResult = "false";
+  var sec = "0";
   var secondsResult = 0;
   const id = JSON.parse(localStorage.getItem("courseId" || "[]"));
   console.log("local", id);
-  const sec = JSON.parse(localStorage.getItem("secondsPlayed" || "[]"));
+   sec = JSON.parse(localStorage.getItem("secondsPlayed" || "[]"));
   console.log("sec", sec);
 
   videoLink = useSelector((state) => state.Course.video);
@@ -103,6 +104,27 @@ const Overview = () => {
   // console.log("overviewResponse", overviewResponse);
 
 
+  useEffect(() => {
+    axios.get(`https://app-virtuallearning-230221110922.azurewebsites.net/user/view/chapter`,
+      {
+        params: {
+          courseId: id
+        },
+        headers: {
+          Authorization: `Bearer ${tokenID}`
+        },
+      }).then((res) => {
+        setChapters(res?.data); 
+        videoLink = chapters?.overviewVideo;
+
+      }).catch((err) => {
+        console.log(err);
+      });
+  });
+ 
+
+  console.log("chapter", chapters);
+
 
   const durations = async () => {
     await axios
@@ -127,28 +149,6 @@ const Overview = () => {
         console.log(err);
       });
   };
-
-
-
-  useEffect(() => {
-    axios.get(`https://app-virtuallearning-230221110922.azurewebsites.net/user/view/chapter`,
-      {
-        params: {
-          courseId: id
-        },
-        headers: {
-          Authorization: `Bearer ${tokenID}`
-        },
-      }).then((res) => {
-        setChapters(res?.data);
-
-      }).catch((err) => {
-        console.log(err);
-      });
-  });
-  videoLink = chapters?.overviewVideo;
-
-  console.log("chapter", chapters);
 
   const toggle = (i) => {
     if (showAccordianContent === i) {
@@ -386,7 +386,11 @@ const Overview = () => {
                                           console.log("dispatch");
                                           dispatch(AddVideo(data?.videoLink));
                                           dispatch(AddLessonId(data?.lessonId));
-                                          dispatch(AddPausedModalDetails(chapters?.lessonResponseList[i]?.lessonList[j]));
+                                          
+                                        }
+                                        if(dispatchResult === "true" && chapters.joinedCourse === true && chapters?.lessonResponseList[i]?.lessonList[j].durationCompleted>0)
+                                        {
+                                            dispatch(AddPausedModalDetails(chapters?.lessonResponseList[i]?.lessonList[j]));
                                         }
                                         else {
                                           console.log("do not dispatch");
@@ -408,7 +412,7 @@ const Overview = () => {
                                           <div className="videoDuration">{secondsToHms(data?.duration)}</div>
                                         </div>
                                         <div className="lesson-play">
-                                          {data?.lessonCompleted === true && data?.durationCompleted > 0 ? (<img src={redPlay} alt="" />) : (<img src={greyPlay} alt="" />)}
+                                          {data?.durationCompleted > 0 ? (<img src={redPlay} alt="" />) : (<img src={greyPlay} alt="" />)}
                                         </div>
                                       </div>
                                     </div>

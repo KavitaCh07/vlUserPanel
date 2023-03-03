@@ -29,8 +29,8 @@ const courseSlice = createSlice({
             state.lessonId = action.payload;
             console.log("store lesson id", state.lessonId);
         },
-        AddPausedModalDetails: (state, action)=>{
-            state.pausedModalDetails = action.payload;
+        AddPausedModalDetails: (state, {payload})=>{
+            state.pausedModalDetails = payload;
             console.log("store modal details", state.pausedModalDetails);
         }
     }
