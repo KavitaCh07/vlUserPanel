@@ -1,0 +1,341 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: #092963;
+    /* height: 60px; */
+    z-index: 1;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.navbar-container {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5.5rem;
+}
+
+img.homeLogo-img {
+    display: flex;
+    width: 175px;
+    height: 35.4px;
+}
+
+.topSearch-category {
+    display: flex;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    color: #373737;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border-radius: 6px;
+}
+
+.topSearch-category-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.searhbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.searchInput {
+    border: none;
+    outline: none;
+    border-radius: 57px;
+    background-color: #123779;
+    padding: 0.5rem 2rem;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    color: #ffffff;
+    padding-left: 3rem;
+}
+
+.searchInput::placeholder {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    color: #FFFFFF;
+    opacity: 30%;
+}
+
+.search-container {
+    display: flex;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 1.55rem;
+    padding-left: 0.5rem;
+    /* left: -1rem; */
+    /* right: 43.7rem; */
+    /* left: 36.5rem; */
+}
+
+.search-with-filter {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.bell-setting-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.topSearch-part {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    gap: 1rem;
+    width: 500px;
+    /* justify-content: center; */
+    /* width: 100%; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.topSearch-text {
+    display: flex;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+    color: #ffffff;
+}
+
+.close-icon {
+    cursor: pointer;
+}
+
+.topSearch-categories {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.search-category {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border-radius: 6px;
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+}
+
+.search-from-category {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+.search-from-categories-text {
+    padding-bottom: 1rem;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+    color: #ffffff;
+}
+
+.searchCategories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.searcCategory {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border-radius: 6px;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+}
+
+.searchCourse-list {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding-top: 2rem;
+    /* align-items: center; */
+}
+
+.no-matching-course {
+    /* display: flex; */
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 26px;
+    color: #ffffff;
+}
+
+.try-different-search {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 26px;
+    color: #FFFFFF;
+    opacity: 50%;
+    padding-top: 0.4rem;
+    padding-bottom: 2rem;
+}
+
+.profile-picture {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    display: inline-block;
+    flex-direction: column;
+    position: absolute;
+    top: 2.5rem;
+    left: -3rem;
+    width: 140px;
+    padding: 0.5rem 1rem;
+}
+
+hr {
+    opacity: 10%;
+}
+
+.my-course {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    /* padding: 0 0.5rem; */
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    cursor: pointer;
+}
+
+.filter-button {
+    cursor: pointer;
+}
+
+.search-match-list {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.search-match {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-match-details {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.search-match-course-name {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: #ffffff;
+}
+
+.total-contain-chater {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    color: #ffffff;
+    opacity: 30%;
+}
+
+.search-match-label {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border-radius: 6px;
+    padding: 0.2rem 0.8rem;
+}
+
+.search-match-list {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #1E4284;
+}
+
+.search-match-course-img {
+    width: 78px;
+    height: 78px;
+    display: flex;
+}
+
+.profile-image{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

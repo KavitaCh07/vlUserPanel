@@ -1,0 +1,439 @@
+.home-top-carousel {
+    width: 100%;
+    position: relative;
+}
+
+.home-carousel-down-part{
+    /* width: 100%; */
+    display: flex;
+    padding: 0 6.5rem 0 5rem;
+    flex-direction: column;
+}
+
+.ongoing-course-part {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: baseline;
+    padding-bottom: 3rem;
+}
+
+.ongoning-see-all {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.ongoing-text {
+    font-size: 24px;
+    line-height: 50px;
+    font-family: Biko;
+    font-weight: 400;
+    color: #000000;
+    font-style: normal;
+}
+
+.see-all-text {
+    font-size: 18px;
+    line-height: 50px;
+    color: #7A7A7A;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Proxima Nova Soft;
+    cursor: pointer;
+}
+
+.ongoing-courses {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    /* padding-bottom: 1rem; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first-ongoing-course-img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.first-course-img{
+    width: 430px;
+    height: 262px;
+}
+
+.ongoing-course-info {
+    position: absolute;
+    /* width: 100%; */
+    /* justify-content: space-between; */
+    /* top: -1rem; */
+    bottom: 1.5rem;
+    left: 1.7rem;
+    display: flex;
+    flex-direction: row;
+    /* position: absolute; */
+}
+
+.course-chapter-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+.course-name {
+    /* position: absolute; */
+    bottom: 0rem;
+    left: -0.5rem;
+    font-size: 18px;
+    /* line-height: 50px; */
+    font-family: Proxima Nova Soft, sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.course-chapter {
+    /* position: absolute; */
+    bottom: 0rem;
+    left: -0.5rem;
+    font-size: 18px;
+    /* line-height: 50px; */
+    font-family: Proxima Nova Soft, sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.ongoing-continue-btn {
+    position: absolute;
+    /* bottom: -2.2rem; */
+    left: 17rem;
+    outline: none;
+    border: none;
+    background-color: #EC5D52;
+    border-radius: 4px;
+    /* right: 29rem; */
+    cursor: pointer;
+}
+
+.ongoing-continue-text {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: Proxima Nova Soft, sans-serif;
+    line-height: 30px;
+    font-weight: 500;
+    padding: 0.5rem;
+}
+
+.categories-part {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
+.categories-see-all {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+
+.categories-text {
+    font-size: 24px;
+    line-height: 50px;
+    font-weight: 400;
+    font-family: Biko;
+    font-style: normal;
+}
+
+.categories-see-all-text {
+    font-family: Proxima Nova Soft;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 50px;
+    font-style: normal;
+    color: #7A7A7A;
+    cursor: pointer;
+}
+
+.categories {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.categories-item {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    box-sizing: border-box;
+    mix-blend-mode: normal;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    font-family: Proxima Nova Soft;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.choice-your-course-part {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
+.choice-your-course {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-bottom: 1rem; */
+}
+
+.choice-your-course-text {
+    font-family: 'Biko';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 50px;
+}
+
+.choice-see-all {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+    color: #7A7A7A;
+    cursor: pointer;
+}
+
+.new-popular-newest-tab {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.tabSelect {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 35px;
+    color: #092963;
+    /* color: #7A7A7A; */
+    background: #DFE7F4;
+    border-radius: 6px;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.tabUnSelect {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #7A7A7A;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.choice-your-courses {
+    display: flex;
+}
+
+.choice-courses {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.choice-first-courses {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    width: 350px;
+    align-items: baseline;
+    position: relative;
+}
+
+.course-label {
+    position: absolute;
+    background: #FCBE4B;
+    mix-blend-mode: normal;
+    border-radius: 6px;
+    top: 9rem;
+    /* bottom: -13.5rem; */
+    padding: 0.3rem 1rem;
+    left: 13rem;
+}
+
+.course-label-text {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 0px;
+    color: #000000;
+    /* padding: 0.5rem 1rem; */
+}
+
+.choice-course-info {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 1rem 1.5rem;
+}
+
+.choice-course-name {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #111111;
+    display: flex;
+    align-items: baseline;
+}
+
+.choice-course-chapter {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #7A7A7A;
+}
+
+.choice1-img {
+    width: 350px;
+    height: 193px;
+}
+
+.top-course-busines-part {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
+.top-course-busines {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.top-course-business {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    /* gap: 1rem; */
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    position: relative;
+    width: 320px;
+}
+
+.top-course-busines-text {
+    font-family: 'Biko';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 50px;
+}
+
+.top-course-seeAll {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+    color: #7A7A7A;
+    cursor: pointer;
+}
+
+.business-course-chapter-duration {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.top-courses-business {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+.business-course-details {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.business-course-name {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.business-chapter {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #7A7A7A;
+}
+
+.business-duration {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #7A7A7A;
+}
+
+.business-play-btn {
+    position: absolute;
+    top: 4.5rem;
+    left: 9rem;
+}
+
+img.business1-img {
+    width: 320px;
+    height: 193px;
+}
+
+
+
+
+

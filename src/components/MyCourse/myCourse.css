@@ -1,0 +1,64 @@
+.my-course-page {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 5.5rem 0 5.5rem;
+    align-items: baseline;
+}
+
+.my-course-text {
+    font-family: 'Biko';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #2BB5F4;
+    cursor: pointer;
+}
+
+.my-course-tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.myCourseTabSelect {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 35px;
+    color: #FFFFFF;
+    background: #042C5C;
+    border-radius: 6px;
+    padding: 0 0.8rem;
+    cursor: pointer;
+}
+
+.myCourseTabUnselect {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+    color: #7A7A7A;
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.home-text {
+    font-family: 'Biko';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #2BB5F4;
+    cursor: pointer;
+}

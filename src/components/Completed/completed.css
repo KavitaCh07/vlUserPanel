@@ -1,0 +1,22 @@
+.completed-category-part {
+    display: flex;
+    padding: 0 5.5rem;
+}
+
+.completed-category {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.completed-course {
+    display: flex;
+    position: relative;
+}
+
+.completed-course-photo {
+    display: flex;
+    /* position: relative; */
+    width: 430px;
+}

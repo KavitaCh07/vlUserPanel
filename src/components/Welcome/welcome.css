@@ -1,0 +1,128 @@
+.welcome-container {
+    background-color: #092963;
+    padding: 2rem 3rem;
+    position: relative;
+}
+
+.welcome-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-back-text {
+    font-size: 32px;
+    font-family: Proxima Nova Soft, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 35px;
+    padding: 2rem 0 1.5rem 0;
+}
+
+.easy-to-learn-text {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Proxima Nova Soft, sans-serif;
+    color: #ffffff;
+    line-height: 26px;
+    padding-bottom: 2rem;
+}
+
+.google-facebook-btn {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    /* gap: 2rem; */
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.facebook-btn {
+    display: flex;
+    outline: none;
+    border: none;
+    background-color: #ffffff;
+    padding: 0.5rem 4rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.google-btn {
+    display: flex;
+    outline: none;
+    border: none;
+    background-color: #ffffff;
+    padding: 0.5rem 4rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+.MuiInput-root {
+    border-bottom: 1px solid #ffffff !important;
+  }
+
+.continue-btn {
+    border: none;
+    background-color: #EE5C4D;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.continue-text {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Proxima Nova Soft, sans-serif;
+    color: #ffffff;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.dont-have-account {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: Proxima Nova Soft, sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.register-text{
+    color: #EE5C4D;
+}
+
+a{
+    all: unset;
+    cursor: pointer;
+}
+
+.errorMessage {
+    display: flex;
+    /* padding: revert; */
+    /* width: 500px; */
+    display: flex;
+    align-items: center;
+    /* padding: 0.5rem 0; */
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    /* flex-direction: row; */
+}

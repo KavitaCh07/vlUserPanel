@@ -1,0 +1,87 @@
+.ongoing-category-container {
+    display: flex;
+    padding: 0 5.5rem;
+    /* width: 100%; */
+    /* background-color: aquamarine; */
+}
+
+.ongoing-category {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.ongoing-course {
+    display: flex;
+    position: relative;
+}
+
+.ongoing-course-photo {
+    display: flex;
+    /* position: relative; */
+    width: 430px;
+    height: 262px;
+}
+
+.ongoing-course-information {
+    display: flex;
+    flex-direction: column;
+}
+
+.ongoing-Text {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.ongoing-course-name {
+    position: absolute;
+    top: 7rem;
+    left: 1.5rem;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.ongoing-course-chapters {
+    position: absolute;
+    top: 9rem;
+    left: 1.5rem;
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.ongoing-continue-Btn {
+    position: absolute;
+    top: 11.5rem;
+    left: 1.5rem;
+    border: none;
+    background: #EC5D52;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ongoing-continue-Text {
+    font-family: 'Proxima Nova Soft';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 35px;
+    color: #ffffff;
+    padding: 0 0.5rem;
+}
